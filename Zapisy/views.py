@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 from .models import Zapisy
-from .forms import ProductForm
+from .forms import ZapisyForm
 # Create your views here.
 
 
@@ -41,8 +41,8 @@ def Zapis(request):
 def Kontakt(request):
     return render(request,'Kontakt.html')
 
-def product_create_view(request):
-    form = ProductForm(request.POST or None)
+def Zapisy_user(request):
+    form = ZapisyForm(request.POST or None)
     if form.is_valid():
         form.save()
         form = ProductForm()
@@ -51,4 +51,4 @@ def product_create_view(request):
     context = {
         'form': form
     }
-    return render(request, "products/product_create.html", context)
+    return render(request, "main/zapisy_create.html", context)
