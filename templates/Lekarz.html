@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lekarze</title>
+</head>
+<body>
+{% extends 'Home.html' %}
+
+{% block produkt %}
+   {% for lek in lekar  %}
+
+  <p> {{ lek.nazwa }} </p>
+  <!--<p> {{ lek.specjalizacja }} </p> -->
+   {% endfor %}
+
+{% endblock produkt %}
+</body>
+</html>

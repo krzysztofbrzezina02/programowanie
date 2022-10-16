@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if zawiera %}
+  <p> {{ zawiera.Imie_pacjenta }} </p>
+  <p> {{ zawiera.Nazwisko_pacjenta }} </p>
+  <p> {{ zawiera.Wybor_lekarza }} </p>
+  <p> {{ zawiera.Czas }} </p>
+
+  {% else %}
+  <p> Nie ma takiego pacjenta o takim id. </p>
+  {% endif %}
+
+</body>
+</html>
