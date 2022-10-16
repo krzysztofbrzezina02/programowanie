@@ -1,9 +1,9 @@
 from django import forms
-from .models import Product
+from .models import Zapisy_Pacjent
 
 class ZapisyForm(forms.ModelForm):
     class Meta:
-        model = Product
+        model = Zapisy_Pacjent
         fields = [
         'Imie_pacjent',
         'Nazwisko_pacjent',

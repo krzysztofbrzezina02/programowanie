@@ -21,10 +21,8 @@ from Zapisy.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    path('Zapisy/<id>/', Zapisu, name='Zapisu'),
     path('Lekarze/', Lekarz, name='Lekarz'),
     path('Przychodnia/', Przychodnia, name='Przychodnia'),
-    path('Zapis/', Zapis, name='Zapis'),
     path('Kontakt/', Kontakt, name='Kontakt'),
     path('Zapisy/', Zapisy_user),
 ]

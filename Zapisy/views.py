@@ -1,27 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
-from .models import Zapisy
 from .forms import ZapisyForm
 # Create your views here.
 
 
 
 def index(request):
-    zapis = Zapisy.objects.all()
-    specja = Specjalizacje.objects.all()
-    dane = {'zapis': zapis, 'specja': specja}
-    return render(request,'Home.html',dane)
-
-#def Specjalizacja(request,id):
- #   zawiera = Specjalizacje.objects.get(pk=id)
-  #  return HttpResponse(zawiera)
-
-def Zapisu(request,id):
-    zawiera = Zapisy.objects.get(pk=id)
-    dane = {'zawiera': zawiera}
-    return render(request,'Zapisu.html',dane)
-
+    return render(request,'Home.html')
 
 def Lekarz(request):
     lekar = Lekarze.objects.all()
@@ -33,11 +19,6 @@ def Przychodnia(request):
     dane = {'o_nas': o_nas}
     return render(request,'Przychodnia.html',dane)
 
-def Zapis(request):
-    wszystko = Zapisy.objects.all()
-    dane = {'wszystko': wszystko}
-    return render(request,'Zapis.html',dane)
-
 def Kontakt(request):
     return render(request,'Kontakt.html')
 
@@ -45,7 +26,7 @@ def Zapisy_user(request):
     form = ZapisyForm(request.POST or None)
     if form.is_valid():
         form.save()
-        form = ProductForm()
+        form = ZapisyForm()
 
 
     context = {

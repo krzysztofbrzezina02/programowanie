@@ -23,31 +23,28 @@ class Lekarze(models.Model):
        verbose_name = "Lekarz"
        verbose_name_plural = "Lekarze"
 
-class Zapisy(models.Model):
-    def __str__(self):
-        return self.Nazwisko_pacjenta
+#class Zapisy(models.Model):
+  #  def __str__(self):
+   #     return self.Nazwisko_pacjenta
 
-    Imie_pacjenta = models.CharField(max_length=60)
-    Nazwisko_pacjenta = models.CharField(max_length=60)
-    Wybor_lekarza = models.ForeignKey(Lekarze,on_delete=models.CASCADE,null=True)
-    Czas = models.DateTimeField(auto_now=False, auto_now_add=False,null=True)
-    class Meta:
-        verbose_name = "Zapisy"
-        verbose_name_plural = "Zapisy"
+   # Imie_pacjenta = models.CharField(max_length=60)
+  #  Nazwisko_pacjenta = models.CharField(max_length=60)
+   # Wybor_lekarza = models.ForeignKey(Lekarze,on_delete=models.CASCADE,null=True)
+   # Czas = models.DateTimeField(auto_now=False, auto_now_add=False,null=True)
+  #  class Meta:
+      #  verbose_name = "Zapisy"
+      #  verbose_name_plural = "Zapisy"
 
-class Product(models.Model):
+class Zapisy_Pacjent(models.Model):
 
-    #title = models.CharField(max_length=60)
-    #descripton = models.TextField(blank=True,null=True)
-    #price = models.DecimalField(default=False,decimal_places=2, max_digits = 10000)
     Imie_pacjent = models.CharField(max_length=60,null=True)
     Nazwisko_pacjent = models.CharField(max_length=60,null=True)
     Wybor_lekarza = models.ForeignKey(Lekarze,on_delete=models.CASCADE,null=True)
     Czas = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True ,null=True)
 
     class Meta:
-        verbose_name = "Product"
-        verbose_name_plural = "Product"
+        verbose_name = "Zapisy_Pacjent"
+        verbose_name_plural = "Zapisy_Pacjent"
 
     def __str__(self):
         return self.Nazwisko_pacjent

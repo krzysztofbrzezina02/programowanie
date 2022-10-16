@@ -1,11 +1,11 @@
 from django.contrib import admin
 
-from .models import Zapisy,Specjalizacje,Lekarze,Product
+from .models import Specjalizacje,Lekarze,Zapisy_Pacjent
 
 
 # Register your models here.
 
-admin.site.register(Zapisy)
+#admin.site.register(Zapisy)
 admin.site.register(Specjalizacje)
 admin.site.register(Lekarze)
-admin.site.register(Product)
+admin.site.register(Zapisy_Pacjent)
