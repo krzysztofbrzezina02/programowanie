@@ -16,13 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Zapisy.views import *
-
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('Lekarze/', Lekarz, name='Lekarz'),
     path('Przychodnia/', Przychodnia, name='Przychodnia'),
-    path('Kontakt/', Kontakt, name='Kontakt'),
+    path('Kontakt/', Formularz, name='Formularz'),
     path('Zapisy/', Zapisy_user),
+    path('login/',auth_views.LoginView.as_view(template_name="registration/login.html"), name="login"),
+    path('logout/', auth_views.LogoutView.as_view(template_name="registration/logout.html"), name="logout"),
+    path('register/', register),
+    path('profil/', profil),
 ]
+

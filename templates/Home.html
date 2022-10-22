@@ -1,28 +1,128 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Strona tytułowa</title>
+
+ <style>
+body
+{
+  background-color:lightblue;
+}
+ a:link
+ {
+ font-family: 'Silkscreen', cursive;
+ color: white;
+ text-decoration: none;
+ }
+ a:visited
+ {
+ color: white;
+ text-decoration: none;
+ }
+ a:hover
+ {
+ color: white;
+ text-decoration: underline;
+ }
+ a:active
+ {
+ color: black;
+ text-decoration: none;
+ }
+ #container
+ {
+ width: 1000px;
+ margin-left: auto;
+ margin-right: auto;
+ background-color: white;
+ }
+ #logo
+ {
+ background-color: #29B6F6;
+ color: white;
+ text-align: center;
+ padding: 10px;
+ }
+ #nav
+ {
+ font-family: 'Silkscreen', cursive;
+ float: left;
+ background-color: #E1F5FE;
+ width: 120px;
+ min-height: 620px;
+ padding: 10px;
+ }
+ #content
+ {
+ float: left;
+ font-family: 'Silkscreen', cursive;
+ width: 640px;
+ padding: 20px;
+ background-color: white;
+ }
+ #ad
+ {
+ float: left;
+ min-height: 620px;
+ width: 160px;
+ padding: 10px;
+ background-color: #E1F5FE;
+ }
+ #footer
+ {
+ clear: both;
+ background-color: #29B6F6;
+ color: white;
+ text-align: center;
+ padding: 20px;
+ }
+
+
+ </style>
 </head>
 <body>
-<div>
 
-<h2><p style="word-spacing: 100px">LOGO  <a href="http://127.0.0.1:8000/Zapisy/">ZAPISY</a>  <a href="http://127.0.0.1:8000/Lekarze/">LEKARZE</a>
-  <a href="http://127.0.0.1:8000/Przychodnia/">PRZYCHODNIA</a> <a href="http://127.0.0.1:8000/Kontakt/">KONTAKT</a> <a href="http://127.0.0.1:8000/">HOME</a></p></h2>
-<div style="clear:both"></div>
-<div style="width:200px; float:left"></div>
+ <div id="container">
+     <div id="logo">
+         {% block logo %}
+         <h3><p style="word-spacing: 20px" >  <a href="http://127.0.0.1:8000/Zapisy/">ZAPISY</a>  <a href="http://127.0.0.1:8000/Lekarze/">LEKARZE</a>
+                 <a href="http://127.0.0.1:8000/Przychodnia/">PRZYCHODNIA</a> <a href="http://127.0.0.1:8000/Kontakt/">KONTAKT</a> <a href="http://127.0.0.1:8000/">HOME</a>{% if user.is_authenticated %}
+         użytkownik:{{ user.username }} <a href="/logout">Logout</a>{% else %}
+             <a href="/login">LOGIN</a> <a href="/register">REGISTER</a><p/>{% endif %}
+         {% endblock logo %}
+     </div>
+     <div id="nav">
+         <h3>Aktualności</h3><hr/>
+       {% for n in nowy  %}
 
 
 
+             <li><span style="font-size: 8.7pt">{{ n.informacja }}<span/></li><hr/><br/>
+
+       {% endfor %}
+     </div>
+
+     <div id="content">
+         {% block content %}
+         <h2>Dr House (ang. House; House, M.D.) – amerykański medyczny serial telewizyjny produkowany dla stacji telewizyjnej Fox. Miał premierę na antenie 16 listopada 2004 roku.</h2>
+
+         Fabuła serialu koncentruje się na osobie doktora Gregory’ego House’a (Hugh Laurie), niekonwencjonalnego, ekscentrycznego, a zarazem genialnego lekarza, kierującego zespołem diagnostycznym w fikcyjnym Szpitalu Klinicznym Princeton-Plainsboro (PPTH) w New Jersey.
+         W każdym odcinku dr House wraz ze swoim zespołem próbuje zdiagnozować i wyleczyć pacjentów przejawiających rozmaite objawy, niewyjaśnione wcześniej przez innych lekarzy.
+         W pierwszych trzech seriach zespół dra House’a tworzyli: dr Allison Cameron (Jennifer Morrison), dr Robert Chase (Jesse Spencer) i dr Eric Foreman (Omar Epps), od czwartej serii dr Chris Taub (Peter Jacobson), dr Lawrence Kutner (Kal Penn) oraz dr Remy „Trzynastka” Hadley (Olivia Wilde), w siódmym sezonie w zespole pojawiła się Martha Masters (Amber Tamblyn), a w ósmym do zespołu dochodzą dr Chi Park (Charlyne Yi) oraz lekarka z więzienia dr Jessica Adams (Odette Annable).
+         Ponadto serial ukazuje prywatne życie House’a, członków jego zespołu, jedynego przyjaciela - dr. Jamesa Wilsona (Robert Sean Leonard), ordynatora oddziału onkologii oraz dr Lisy Cuddy (Lisa Edelstein), dyrektor szpitala Princeton‑Plainsboro.
 
 
-  </div>
+         {% endblock content %}
+     </div>
+     <div id="ad">
 
-  <div style="width:700; float:left">
-    {% block produkt %}
+     </div>
+     <div id="footer">
+      Najlepsza przychodnia lekarska &copy; Wszelkie praw zastrzeżone
+     </div>
+ </div>
 
-    {% endblock produkt %}
-  </div>
-  <div style="clear:both"></div>
 </body>
 </html>
+

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Specjalizacje,Lekarze,Zapisy_Pacjent
+from .models import Specjalizacje,Lekarze,Zapisy_Pacjent,Formularz_kontaktowy,Aktualnosci
 
 
 # Register your models here.
@@ -9,3 +9,6 @@ from .models import Specjalizacje,Lekarze,Zapisy_Pacjent
 admin.site.register(Specjalizacje)
 admin.site.register(Lekarze)
 admin.site.register(Zapisy_Pacjent)
+admin.site.register(Formularz_kontaktowy)
+admin.site.register(Aktualnosci)
+

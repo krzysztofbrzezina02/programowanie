@@ -1,0 +1,36 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'Home.html' %}
+
+ {% block content %}
+<h2>Kontakt:</h2>
+<strong>Telefon :</strong> 71 324 43 12
+<br>
+<strong>Adres :</strong> ul. Kwiatowa 32
+<br>
+<br><br><br>
+<h2>Formularz Kontaktowy: </h2>
+ <form  method="post">{% csrf_token %}
+    {{form.as_p}}
+<script>
+  $(function () {
+    $("#id_date").datetimepicker({
+      format: 'd/m/Y H:i',
+    });
+  });
+</script>
+    <input type="submit" value="Wyślij" />
+</form>
+ {% endblock content %}
+
+
+
+
+
+
+
+</body>
+</html>

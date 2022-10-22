@@ -7,13 +7,15 @@
 <body>
 {% extends 'Home.html' %}
 
-{% block produkt %}
+{% block content %}
+   <h3>Nasi Lekarze:</h3>
    {% for lek in lekar  %}
-
-  <p> {{ lek.nazwa }} </p>
+   <ul>
+   <li>{{ lek.nazwa }}
   <!--<p> {{ lek.specjalizacja }} </p> -->
+   </ul>
    {% endfor %}
 
-{% endblock produkt %}
+{% endblock content %}
 </body>
 </html>
