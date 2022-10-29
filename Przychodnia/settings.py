@@ -37,11 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'crispy_forms',
+    'crispy_bootstrap5',
     'Zapisy',
 
 
 ]
+
+CRISPY_ALLOWED_TEMPLATES_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATES_PACKS = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'Przychodnia.urls'

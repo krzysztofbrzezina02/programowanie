@@ -1,9 +1,11 @@
+<!DOCTYPE html>
+<html lang="pl">
 {% extends 'Home.html' %}
 {% block content %}
    {% load crispy_forms_tags %}
 
     <form method="POST">
         {% csrf_token %}{{form|crispy}}
-        <button type="submit">Login</button>
+        <button type="submit">Zarejestruj sie</button>
     </form>
 {% endblock content %}

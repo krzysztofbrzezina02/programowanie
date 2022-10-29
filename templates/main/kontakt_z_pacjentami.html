@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Przychodnia</title>
+<style>
+.zap
+{
+ float: left;
+ width: 400px;
+}
+.formul
+{
+ float: right;
+ margin-left: 20px;
+ width: 330px;
+
+}
+img
+{
+border-radius: 40px;
+}
+form
+{
+width: 400px;
+}
+</style>
+</head>
+<body>
+{% extends 'Home.html' %}
+ {% block content %}
+    <div class="zap">
+    <h2>Kontakt:</h2>
+<strong>Telefon :</strong> 71 324 43 12
+<br>
+<strong>Adres :</strong> ul. Kwiatowa 32
+<br>
+<br><br><br>
+    </div>
+     <div class="formul">
+         <h2>Formularz Kontaktowy: </h2>
+         <form  method="post">{% csrf_token %}
+          {{form.as_p}}
+         <script>
+         $(function () {
+         $("#id_date").datetimepicker({
+         format: 'd/m/Y H:i',
+         });
+         });
+</script>
+    <input type="submit" value="Wyślij" />
+</form>
+     </div>
+{% endblock content %}
+</body>
+</html>

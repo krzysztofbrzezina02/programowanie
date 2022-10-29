@@ -6,8 +6,10 @@
 </head>
 
 <body>
-    You have successfully logged out.
-    <a href="/">Home</a>
+{% extends 'Home.html' %}
+{% block content %}
+    Zostałeś poprawnie wylogowany <a style="color: blue;" href="/">Wróc do strony głownej</a>
+{% endblock content %}
 </body>
 
 </html>

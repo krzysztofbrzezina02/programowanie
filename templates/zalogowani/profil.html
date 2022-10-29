@@ -2,6 +2,6 @@
  {% block logo %}
  <h3><p style="word-spacing: 20px" >  <a href="http://127.0.0.1:8000/Zapisy/">ZAPISY</a>  <a href="http://127.0.0.1:8000/Lekarze/">LEKARZE</a>
                  <a href="http://127.0.0.1:8000/Przychodnia/">PRZYCHODNIA</a> <a href="http://127.0.0.1:8000/Kontakt/">KONTAKT</a> <a href="http://127.0.0.1:8000/profil/">PROFIL</a> <a href="http://127.0.0.1:8000/">HOME</a>{% if user.is_authenticated %}
-         użytkownik:{{ user.username }} <a href="/logout">Logout</a>{% endif %}
+         użytkownik:{{ user.username }} <a href="/logout">WYLOGUJ</a>{% endif %}
  {% endblock logo %}
 

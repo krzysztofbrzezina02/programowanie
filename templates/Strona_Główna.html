@@ -11,20 +11,17 @@ height: 100px;
 text-align: center;
 font-family: 'Silkscreen', cursive;
 }
-#ramka
+#rama
 {
-
-
  margin-top: 50px;
  margin-left: 50px;
  float: left;
  font-family: 'Source Sans 3', sans-serif;
  width: 320px;
-
  padding: 10px;
  text-align: center;
 }
-#ramka1
+#rama1
 {
 margin-top: 2px;
 margin-left: 25px;
@@ -37,11 +34,6 @@ img
 {
 border-radius: 40px;
 }
-#przerwa
-{
-clear: both;
-height: 150px;
-}
 
 </style>
 </head>
@@ -53,16 +45,23 @@ height: 150px;
 <div id="tytul">
     <h2>Przychodnia "Twoje zdrowie"</h2>
 </div>
- <div id="ramka">
-     <span style="font-size: 13px"><span style="color: grey">Przychodnia rozpoczeła swoja działalność w 2010 roku. Od momentu powstania tworza ją znakomici ludzie a zarazem fachwowcy.Nasza Przychodnia mieści się na ulicy Kwiatowej 32 we Wrocławiu.<span/><span/>
+ <div id="rama">
+     <span style="font-size: 13px"><span style="color: grey">Jesteśmy gwarantem twojego zdrowia. Umów się na wizytę bez czekania w długich kolejkach. Dołacz do innych pacjentów przychodni już dziś.<span/><span/>
+<br>
+<br>
+ <br>
+<form action="http://127.0.0.1:8000/register/">
+    <input type="submit" value="Dołącz do nas" />
+</form>
  </div>
-<div id = "ramka1">
+
+
+<div id = "rama1">
     <img src="https://przychodnia-blonie.pl/wp-content/uploads/2020/05/przychodnia.jpg" width="350" height="200"  alt="Pasja informatyki">
 </div>
-<div id="przerwa">
 
-</div>
  {% endblock content %}
 
 </body>
 </html>
+

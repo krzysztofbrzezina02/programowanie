@@ -42,7 +42,9 @@ body
  background-color: #29B6F6;
  color: white;
  text-align: center;
- padding: 10px;
+ padding: 15px;
+
+
  }
  #nav
  {
@@ -57,9 +59,10 @@ body
  {
  float: left;
  font-family: 'Silkscreen', cursive;
- width: 640px;
+ width: 800px;
  padding: 20px;
  background-color: white;
+
  }
  #ad
  {
@@ -72,12 +75,58 @@ body
  #footer
  {
  clear: both;
+
  background-color: #29B6F6;
  color: white;
  text-align: center;
  padding: 20px;
  }
+.tytul
+{
+width: 960px;
+height: 100px;
+text-align: center;
+font-family: 'Silkscreen', cursive;
+}
+.rama
+{
+ margin-top: 50px;
+ margin-left: 50px;
+ float: left;
+ font-family: 'Source Sans 3', sans-serif;
+ width: 320px;
+ padding: 10px;
+ text-align: center;
+}
+.rama12
+{
+margin-top: 2px;
+margin-left: 25px;
+ float: right;
+ font-family: 'Silkscreen', cursive;
+ width: 250px;
+ background-color: white;
+}
+img
+{
 
+border-radius: 40px;
+}
+.przerwa
+{
+clear: both;
+height: 150px;
+}
+.Przycisk
+{
+margin-left: 80px;
+border-radius: 40px;
+    display: block;
+    height: 50px;
+    width: 120px;
+    background: lightblue;
+    border: 2px solid rgba(33, 68, 72, 0.59);
+}
 
  </style>
 </head>
@@ -88,11 +137,13 @@ body
          {% block logo %}
          <h3><p style="word-spacing: 20px" >  <a href="http://127.0.0.1:8000/Zapisy/">ZAPISY</a>  <a href="http://127.0.0.1:8000/Lekarze/">LEKARZE</a>
                  <a href="http://127.0.0.1:8000/Przychodnia/">PRZYCHODNIA</a> <a href="http://127.0.0.1:8000/Kontakt/">KONTAKT</a> <a href="http://127.0.0.1:8000/">HOME</a>{% if user.is_authenticated %}
-         użytkownik:{{ user.username }} <a href="/logout">Logout</a>{% else %}
-             <a href="/login">LOGIN</a> <a href="/register">REGISTER</a><p/>{% endif %}
+         użytkownik:{{ user.username }} <a href="/logout">WYLOGUJ</a>{% else %}
+             <a href="/login">LOGOWANIE</a> <a href="/register">REJESTRACJA</a><p/>{% endif %}
          {% endblock logo %}
      </div>
+     <!--
      <div id="nav">
+
          <h3>Aktualności</h3><hr/>
        {% for n in nowy  %}
 
@@ -102,22 +153,33 @@ body
 
        {% endfor %}
      </div>
-
+     -->
      <div id="content">
          {% block content %}
-         <h2>Dr House (ang. House; House, M.D.) – amerykański medyczny serial telewizyjny produkowany dla stacji telewizyjnej Fox. Miał premierę na antenie 16 listopada 2004 roku.</h2>
+         <div class="tytul">
+    <h2>Przychodnia "Twoje zdrowie"</h2>
+</div>
+ <div class="rama">
+     <span style="font-size: 13px"><span style="color: grey">Jesteśmy gwarantem twojego zdrowia. Umów się na wizytę bez czekania w długich kolejkach. Dołacz do innych pacjentów przychodni już dziś.<span/><span/>
+<br>
+<br>
+ <br>
+<form action="http://127.0.0.1:8000/register/">
+    <input type="submit" class="Przycisk" value="Dołącz do nas" />
+</form>
+ </div>
+         <div class = "rama12">
 
-         Fabuła serialu koncentruje się na osobie doktora Gregory’ego House’a (Hugh Laurie), niekonwencjonalnego, ekscentrycznego, a zarazem genialnego lekarza, kierującego zespołem diagnostycznym w fikcyjnym Szpitalu Klinicznym Princeton-Plainsboro (PPTH) w New Jersey.
-         W każdym odcinku dr House wraz ze swoim zespołem próbuje zdiagnozować i wyleczyć pacjentów przejawiających rozmaite objawy, niewyjaśnione wcześniej przez innych lekarzy.
-         W pierwszych trzech seriach zespół dra House’a tworzyli: dr Allison Cameron (Jennifer Morrison), dr Robert Chase (Jesse Spencer) i dr Eric Foreman (Omar Epps), od czwartej serii dr Chris Taub (Peter Jacobson), dr Lawrence Kutner (Kal Penn) oraz dr Remy „Trzynastka” Hadley (Olivia Wilde), w siódmym sezonie w zespole pojawiła się Martha Masters (Amber Tamblyn), a w ósmym do zespołu dochodzą dr Chi Park (Charlyne Yi) oraz lekarka z więzienia dr Jessica Adams (Odette Annable).
-         Ponadto serial ukazuje prywatne życie House’a, członków jego zespołu, jedynego przyjaciela - dr. Jamesa Wilsona (Robert Sean Leonard), ordynatora oddziału onkologii oraz dr Lisy Cuddy (Lisa Edelstein), dyrektor szpitala Princeton‑Plainsboro.
+             <img src="https://s3-eu-west-1.amazonaws.com/znanylekarz.pl/doctor/d23207/d23207f59d9662ba7035203f3806dc8f_large.jpg" width="350" height="200"  alt="Pasja informatyki">
+         </div>
 
+         <div class="przerwa">
+
+         </div>
 
          {% endblock content %}
      </div>
-     <div id="ad">
 
-     </div>
      <div id="footer">
       Najlepsza przychodnia lekarska &copy; Wszelkie praw zastrzeżone
      </div>

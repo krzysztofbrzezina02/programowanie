@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import *
-from .forms import ZapisyForm
+from .forms import ZapisyForm,RegistrationForm
 from .forms import FormularzForm
 from django.contrib.auth import logout
 from .forms import UserRegistrationForm
@@ -21,13 +21,13 @@ def Lekarz(request):
     nowy=Aktualnosci.objects.all()
     lekar = Lekarze.objects.all()
     dane = {'lekar': lekar,'nowy': nowy}
-    return render(request,'Lekarz.html',dane)
+    return render(request,'nasi_lekarze.html',dane)
 
 def Przychodnia(request):
     nowy=Aktualnosci.objects.all()
     o_nas = Lekarze.objects.all()
     dane = {'o_nas': o_nas,'nowy': nowy}
-    return render(request,'Tytulowa.html',dane)
+    return render(request,'Przychodnia.html',dane)
 
 def Zapisy_user(request):
     nowy=Aktualnosci.objects.all()
@@ -40,7 +40,7 @@ def Zapisy_user(request):
     context = {
         'form': form,'nowy':nowy
     }
-    return render(request, "main/zapisy_create.html", context)
+    return render(request, "main/zapisy_do_lekarza.html", context)
 
 #def Kontakt(request):
 
@@ -59,23 +59,9 @@ def Formularz(request):
     context = {
         'form': form,'nowy':nowy
     }
-    return render(request, "main/formularz.html", context)
+    return render(request, "main/kontakt_z_pacjentami.html", context)
 
 
-#def register(request):
-    #form = UserRegistrationForm(request.POST or None)
-    #if form.is_valid():
-       # form.save()
-        #form = UserRegistrationForm()
-
-
-
-
-    #context = {
-     #   'form': form
-    #}
-
-    #return render(request, 'registration/register.html', context)
 
 def register(request):
     if request.method == 'POST':
@@ -102,3 +88,18 @@ def profil(request):
     nowy=Aktualnosci.objects.all()
     dane = {'nowy': nowy}
     return render(request, "zalogowani/profil.html",dane)
+
+def sign_up(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('/profil')
+    else:
+        form = RegistrationForm()
+
+    return render(request,'registration/sign_up.html',{"form":form})
+
+def alama(request):
+     return render(request,'main/ala.html')
