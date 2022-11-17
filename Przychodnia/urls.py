@@ -18,6 +18,7 @@ from django.urls import path,include
 from Zapisy.views import *
 from django.contrib.auth import views as auth_views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
@@ -29,6 +30,7 @@ urlpatterns = [
     path('profil/', profil),
     path('', include('django.contrib.auth.urls')),
     path('register/', sign_up),
-    path('alamakota/', alama),
+
 ]
+
 

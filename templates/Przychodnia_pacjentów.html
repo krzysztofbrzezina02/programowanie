@@ -6,7 +6,7 @@
 <style>
 #tytul
 {
-width: 960px;
+width: 1260px;
 height: 100px;
 text-align: center;
 font-family: 'Silkscreen', cursive;
@@ -27,16 +27,15 @@ font-family: 'Silkscreen', cursive;
 #ramka1
 {
 margin-top: 2px;
-margin-left: 25px;
+margin-right: 100px;
  float: right;
  font-family: 'Silkscreen', cursive;
- width: 250px;
+ width: 550px;
 
 }
 img
 {
 border-radius: 40px;
-
 }
 #przerwa
 {
@@ -48,7 +47,7 @@ height: 150px;
 </head>
 <body>
 
-{% extends 'Home.html' %}
+{% extends 'Strona_Główna.html' %}
 
  {% block content %}
 <div id="tytul">
@@ -58,11 +57,9 @@ height: 150px;
      <span style="font-size: 13px"><span style="color: grey">Przychodnia rozpoczeła swoja działalność w 2010 roku. Od momentu powstania tworza ją znakomici ludzie a zarazem fachwowcy.Nasza Przychodnia mieści się na ulicy Kwiatowej 32 we Wrocławiu.<span/><span/>
  </div>
 <div id = "ramka1">
-    <img src="https://przychodnia-blonie.pl/wp-content/uploads/2020/05/przychodnia.jpg" width="370" height="200"  alt="Pasja informatyki">
+    <img src="https://przychodnia-blonie.pl/wp-content/uploads/2020/05/przychodnia.jpg" width="450" height="250">
 </div>
-<div id="przerwa">
 
-</div>
  {% endblock content %}
 
 </body>

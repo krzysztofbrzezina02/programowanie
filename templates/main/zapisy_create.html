@@ -1,12 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Przychodnia</title>
+<style>
+.napis
+{
+text-align: center;
+}
+.zap
+{
+ float: left;
+ width: 400px;
+}
+.obrazek
+{
+ float: right;
+ margin-top: 30px;
+ margin-left: 20px;
+ width: 600px;
 
-
-{% extends 'Home.html' %}
-
-
+}
+img
+{
+border-radius: 40px;
+}
+form
+{
+width: 400px;
+}
+</style>
+</head>
+<body>
+{% extends 'Strona_Główna.html' %}
  {% block content %}
-    <h3>Zapisy:</h3>
+    <div class="zap">
+    <h2 class="napis">Zapisy:</h2>
+        <br>
     <form  method="post">{% csrf_token %}
-    {{form.as_p}} 
-    <input type="submit" value="Zapisz" />
+    {{form.as_p}}
+    <input type="submit" value="Zapisz"/>
 </form>
- {% endblock content %}
+    </div>
+     <div class="obrazek">
+          <img src="https://szpitalmatopat.pl/assets/media/6179490d43956_zapisy%20na%20wizyt%C4%99%20do%20szpitala%20Matopat.jpg" width="=450" height="300">
+     </div>
+{% endblock content %}
+</body>
+</html>

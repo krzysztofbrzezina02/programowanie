@@ -12,8 +12,8 @@
 .formul
 {
  float: right;
- margin-left: 20px;
- width: 330px;
+ margin-right: 100px;
+ width: 600px;
 
 }
 img
@@ -27,7 +27,7 @@ width: 400px;
 </style>
 </head>
 <body>
-{% extends 'Home.html' %}
+{% extends 'Strona_Główna.html' %}
  {% block content %}
     <div class="zap">
     <h2>Kontakt:</h2>
@@ -41,13 +41,6 @@ width: 400px;
          <h2>Formularz Kontaktowy: </h2>
          <form  method="post">{% csrf_token %}
           {{form.as_p}}
-         <script>
-         $(function () {
-         $("#id_date").datetimepicker({
-         format: 'd/m/Y H:i',
-         });
-         });
-</script>
     <input type="submit" value="Wyślij" />
 </form>
      </div>
