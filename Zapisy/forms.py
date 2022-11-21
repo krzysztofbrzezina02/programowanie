@@ -25,11 +25,12 @@ class FormularzForm(forms.ModelForm):
         'Opis',
         ]
 
-#class UserRegistrationForm(forms.Form):
-    #username = forms.CharField(required=True,label = 'Username',max_length=32)
-    #email = forms.CharField(required=True,label = 'Email',max_length=32)
-   # password = forms.CharField(required=True,label = 'Password',max_length=32)
-   # data = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type':'date'}))
+#class Zapisy_ulepszenie(forms.Form):
+    #Imie = forms.CharField(required=True,label = 'Imie',max_length=32)
+    #Nazwisko = forms.CharField(required=True,label = 'Nazwisko',max_length=32)
+    #Lekarz = forms.CharField(required=True,label = 'Lekarz',max_length=32)
+    #data = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type':'date'}))
+    #czas = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type':'time'}))
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)

@@ -224,31 +224,26 @@ margin-left: 20px;
 </head>
 <body>
 
-         <!--<h3><p style="word-spacing: 20px" >  <a href="http://127.0.0.1:8000/Zapisy/">ZAPISY</a>  <a href="http://127.0.0.1:8000/Lekarze/">LEKARZE</a>
-                 <a href="http://127.0.0.1:8000/Przychodnia/">PRZYCHODNIA</a> <a href="http://127.0.0.1:8000/Kontakt/">KONTAKT</a> <a href="http://127.0.0.1:8000/">HOME</a>{% if user.is_authenticated %}
-         użytkownik:{{ user.username }} <a href="/logout">WYLOGUJ</a>{% else %}
-             <a href="/login">LOGOWANIE</a> <a href="/register">REJESTRACJA</a><p/>{% endif %}-->
-
-
  <div id="container">
          <div id="logo">
 
          {% block logo %}
 
-         <ul class="menu"><span style="font-size: 13.2px">
+         <ul class="menu"  style="font-size: 13.2px">
              <li><a href="http://127.0.0.1:8000/"><img class="ra" src="{% static 'img/TPrzychodnia.png' %}" width="210" height="50" ></a></li>
              <li class="i"><a href="http://127.0.0.1:8000/Zapisy/">ZAPISY</a></li>
              <li class="i"><a href="http://127.0.0.1:8000/Lekarze/">LEKARZE</a></li>
              <li class="i"><a href="http://127.0.0.1:8000/Przychodnia/">PRZYCHODNIA</a></li>
              <li class="i"><a href="http://127.0.0.1:8000/Kontakt/">KONTAKT</a></li>
-             <li class="uzyt">{% if user.is_authenticated %} użytkownik:{{ user.username }}</li>
-                 <li class="i"><a href="/logout">WYLOGUJ</a></li>
+             <li class="uzyt">{% if user.is_authenticated %} użytkownik:{{ user.username }}
+                 <li class="i"><a href="/logout">WYLOGUJ</a>
                  {% else %}
-                 <li class="logowanie"><a href="/login">LOGOWANIE</a></li>
+                 <li class="logowanie"><a href="/login">LOGOWANIE</a>
                      <li class="rejestracja"><a style="color:white;" href="/register">REJESTRACJA</a>{% endif %}</li>
              <hr style=" background: lightgrey;" class="linia">
 
-         </ul></span>
+         </ul>
+
         {% endblock logo %}
         </div>
          <!--<h3><p style="word-spacing: 20px" >  <a href="http://127.0.0.1:8000/Zapisy/">ZAPISY</a>  <a href="http://127.0.0.1:8000/Lekarze/">LEKARZE</a>
@@ -257,7 +252,7 @@ margin-left: 20px;
              <a href="/login">LOGOWANIE</a> <a href="/register">REJESTRACJA</a><p/>{% endif %}
 
      </div>
-     <!--
+
      <div id="nav">
 
          <h3>Aktualności</h3><hr/>
@@ -276,7 +271,7 @@ margin-left: 20px;
     <h2>Przychodnia "Twoje zdrowie"</h2>
 </div>
  <div class="rama">
-     <span style="font-size: 17px"><span style="color: grey">Jesteśmy gwarantem twojego zdrowia. Umów się na wizytę bez czekania w długich kolejkach. Dołacz do innych pacjentów przychodni już dziś.<span/><span/>
+     <span style="font-size: 17px"><span style="color: grey">Jesteśmy gwarantem twojego zdrowia. Umów się na wizytę bez czekania w długich kolejkach. Dołacz do innych pacjentów przychodni już dziś.</span></span>
 <br>
 <br>
  <br>

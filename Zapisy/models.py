@@ -29,7 +29,7 @@ class Zapisy_Pacjent(models.Model):
     Imie_pacjent = models.CharField(max_length=60,null=True)
     Nazwisko_pacjent = models.CharField(max_length=60,null=True)
     Wybor_lekarza = models.ForeignKey(Lekarze,on_delete=models.CASCADE,null=True)
-    Data = models.DateTimeField(auto_now=False, auto_now_add=False,blank=True,null=True)
+    Data = models.DateTimeField(blank=True,null=True)
 
     class Meta:
         verbose_name = "Zapisy_Pacjent"
