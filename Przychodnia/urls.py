@@ -29,6 +29,7 @@ urlpatterns = [
     path('profil/', profil),
     path('', include('django.contrib.auth.urls')),
     path('register/', sign_up),
+    path('Oceny/',Oceny_Lek, name='Oceny_Lek'),
 
 ]
 

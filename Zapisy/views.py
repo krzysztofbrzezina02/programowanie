@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import *
-from .forms import ZapisyForm,RegistrationForm
+from .forms import ZapisyForm,RegistrationForm,Ocena
 from .forms import FormularzForm
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
@@ -67,6 +67,21 @@ def sign_up(request):
         form = RegistrationForm()
 
     return render(request,'registration/sign_up.html',{"form":form})
+
+def Oceny_Lek(request):
+   form = Ocena(request.POST or None)
+   if form.is_valid():
+        form.save()
+        form = Ocena()
+
+
+   dane = {
+
+        'form': form,
+    }
+   return render(request, "zalogowani/Oceny_Lekarz.html",dane)
+
+
 
 
 

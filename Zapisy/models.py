@@ -29,7 +29,8 @@ class Zapisy_Pacjent(models.Model):
     Imie_pacjent = models.CharField(max_length=60,null=True)
     Nazwisko_pacjent = models.CharField(max_length=60,null=True)
     Wybor_lekarza = models.ForeignKey(Lekarze,on_delete=models.CASCADE,null=True)
-    Data = models.DateTimeField(blank=True,null=True)
+    Data = models.DateTimeField(null=True,blank=True,auto_now_add=False)
+    Czas = models.TimeField(null=True,auto_now_add=False)
 
     class Meta:
         verbose_name = "Zapisy_Pacjent"
@@ -54,6 +55,17 @@ class Formularz_kontaktowy(models.Model):
 
     def __str__(self):
         return self.Email
+
+class Oceny_Lekarzy(models.Model):
+    def __str__(self):
+        return self.Ocena
+
+    Wybor_lekarza = models.ForeignKey(Lekarze,on_delete=models.CASCADE,null=True)
+    Ocena = models.CharField(max_length=60,null=True)
+
+    class Meta:
+       verbose_name = "Oceny"
+       verbose_name_plural = "Oceny"
 
 
 

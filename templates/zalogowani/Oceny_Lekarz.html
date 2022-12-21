@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+.napis
+{
+text-align: center;
+}
+.oce
+{
+ float: left;
+ width: 400px;
+}
+.obrazek
+{
+ float: right;
+ margin-top: 30px;
+ margin-left: 20px;
+ width: 650px;
+
+}
+img
+{
+border-radius: 40px;
+}
+form
+{
+width: 400px;
+}
+</style>
+</head>
+<body>
+{% extends 'Strona_Główna.html' %}
+ {% block content %}
+    <div class="oce">
+    <h2 class="napis">Oceny:</h2>
+        <br>
+    <form  method="post">{% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Dodaj"/>
+    </form>
+    </div>
+     <div class="obrazek">
+          <img src="https://www.gowork.pl/blog/wp-content/uploads/2017/02/Oceny-pracownicze.jpg" width="=450" height="350">
+     </div>
+
+{% endblock content %}
+</body>
+</html>

@@ -1,9 +1,12 @@
 from django import forms
-from .models import Zapisy_Pacjent
+from .models import Zapisy_Pacjent,Oceny_Lekarzy
 from .models import Formularz_kontaktowy
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.admin import widgets
+from django.contrib.admin.widgets import AdminDateWidget,AdminTimeWidget,AdminSplitDateTime
+
+
 class ZapisyForm(forms.ModelForm):
     class Meta:
         model = Zapisy_Pacjent
@@ -12,7 +15,12 @@ class ZapisyForm(forms.ModelForm):
         'Nazwisko_pacjent',
         'Wybor_lekarza',
         'Data',
+        'Czas'
         ]
+        widgets = {
+            "Data": forms.DateInput(attrs={'type':'date'}),
+            "Czas": forms.TimeInput(attrs={'type':'time'})
+        }
 
 
 class FormularzForm(forms.ModelForm):
@@ -42,3 +50,8 @@ class RegistrationForm(UserCreationForm):
         'password1',
         'password2',
         ]
+
+class Ocena(forms.ModelForm):
+    class Meta:
+        model = Oceny_Lekarzy
+        fields ="__all__"
